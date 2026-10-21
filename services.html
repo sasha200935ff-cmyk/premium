@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Услуги — HanDiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">HanDiz <span>®</span></a>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="portfolio.html">Портфолио</a>
+      <a href="about.html">Обо мне</a>
+      <a href="services.html" class="active">Услуги</a>
+      <a href="contact.html">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a href="contact.html" class="btn btn-sm btn-accent">Обсудить проект</a>
+      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html">Главная</a>
+    <a href="portfolio.html">Портфолио</a>
+    <a href="about.html">Обо мне</a>
+    <a href="services.html">Услуги</a>
+    <a href="contact.html">Контакты</a>
+  </nav>
+
+  <div class="page-hero reveal">
+    <div class="breadcrumb"><a href="index.html">Главная</a> · Услуги</div>
+    <h1>Услуги</h1>
+    <p class="section-lead">Пакеты работ с понятным составом и ориентировочной стоимостью.</p>
+  </div>
+  <section class="section" style="padding-top:0">
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <h3>UI/UX дизайн</h3>
+        <p>Интерфейсы веб и мобильных продуктов.</p>
+        <ul class="service-list">
+          <li>Исследование и прототипы</li>
+          <li>UI-киты и дизайн-системы</li>
+          <li>Адаптив и микроанимации</li>
+        </ul>
+        <div class="service-price">от 80 000 ₽</div>
+        <a href="contact.html" class="btn btn-outline btn-sm">Заказать</a>
+      </div>
+      <div class="service-card featured reveal reveal-delay-1">
+        <h3>Брендинг</h3>
+        <p>Айдентика и визуальный язык бренда.</p>
+        <ul class="service-list">
+          <li>Логотип и фирменный стиль</li>
+          <li>Гайдлайны и брендбук</li>
+          <li>Носители и шаблоны</li>
+        </ul>
+        <div class="service-price">от 120 000 ₽</div>
+        <a href="contact.html" class="btn btn-accent btn-sm">Заказать</a>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <h3>Полиграфия</h3>
+        <p>Презентации, брошюры, упаковка.</p>
+        <ul class="service-list">
+          <li>Презентации для питчей</li>
+          <li>Печатные материалы</li>
+          <li>Упаковка и POS</li>
+        </ul>
+        <div class="service-price">от 45 000 ₽</div>
+        <a href="contact.html" class="btn btn-outline btn-sm">Заказать</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div><a href="index.html" class="logo">HanDiz <span>®</span></a></div>
+      <div><h4>Навигация</h4>
+        <a href="portfolio.html">Портфолио</a>
+        <a href="about.html">Обо мне</a>
+        <a href="services.html">Услуги</a>
+        <a href="contact.html">Контакты</a>
+      </div>
+      <div><h4>Услуги</h4>
+        <a href="services.html">UI/UX</a>
+        <a href="services.html">Брендинг</a>
+      </div>
+      <div><h4>Связь</h4>
+        <a href="mailto:hello@handiz.ru">hello@handiz.ru</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 HanDiz</span>
+      <a href="admin.html" class="footer-admin">Режим администратора</a>
+    </div>
+  </footer>
+  <div id="toast" class="toast"></div>
+  <script src="main.js"></script>
+  
+</body>
+</html>

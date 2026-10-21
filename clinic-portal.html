@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinic Portal — HanDiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">HanDiz <span>®</span></a>
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="portfolio.html" class="active">Портфолио</a>
+      <a href="about.html">Обо мне</a>
+      <a href="services.html">Услуги</a>
+      <a href="contact.html">Контакты</a>
+    </nav>
+    <div class="header-actions">
+      <a href="contact.html" class="btn btn-sm btn-accent">Обсудить проект</a>
+      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html">Главная</a>
+    <a href="portfolio.html">Портфолио</a>
+    <a href="about.html">Обо мне</a>
+    <a href="services.html">Услуги</a>
+    <a href="contact.html">Контакты</a>
+  </nav>
+
+  <div class="project-hero">
+    <div class="breadcrumb" style="width:min(var(--max),92vw);margin:0 auto 16px"><a href="index.html">Главная</a> · <a href="portfolio.html">Портфолио</a> · Clinic Portal</div>
+    <div class="project-cover" style="background:linear-gradient(135deg, #0e7490, #22d3ee)">
+      <h1>Clinic Portal</h1>
+    </div>
+  </div>
+  <div class="project-body">
+    <div class="project-content reveal">
+      <div class="project-meta">
+        <div><span>Клиент</span><b>MedLine</b></div>
+        <div><span>Роль</span><b>Product Designer</b></div>
+        <div><span>Инструменты</span><b>Figma</b></div>
+        <div><span>Год</span><b>2025</b></div>
+      </div>
+      <h2>Задача</h2>
+      <p>Личный кабинет клиники. Нужно было выстроить узнаваемый визуальный язык и согласовать его с целями бизнеса.</p>
+      <h2>Решение</h2>
+      <p>Провели исследование, собрали референсы, предложили 2–3 направления. После согласования концепта разработали ключевые носители и гайдлайны.</p>
+      <h2>Результат</h2>
+      <p>Команда клиента получила целостную систему, готовую к внедрению в продукт и маркетинг. Сроки соблюдены, итерации прошли без переработок.</p>
+    </div>
+    <div class="project-side reveal">
+      <span class="work-cat" style="display:inline-block;margin-bottom:16px">UI/UX</span>
+      <h3 style="margin-bottom:12px">Похожий проект?</h3>
+      <p style="color:var(--ink-muted);font-size:0.9rem;margin-bottom:20px">Расскажите о задаче — обсудим формат и сроки.</p>
+      <a href="contact.html" class="btn btn-accent btn-full">Обсудить</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div><a href="index.html" class="logo">HanDiz <span>®</span></a></div>
+      <div><h4>Навигация</h4>
+        <a href="portfolio.html">Портфолио</a>
+        <a href="about.html">Обо мне</a>
+        <a href="services.html">Услуги</a>
+        <a href="contact.html">Контакты</a>
+      </div>
+      <div><h4>Услуги</h4>
+        <a href="services.html">UI/UX</a>
+        <a href="services.html">Брендинг</a>
+      </div>
+      <div><h4>Связь</h4>
+        <a href="mailto:hello@handiz.ru">hello@handiz.ru</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 HanDiz</span>
+      <a href="admin.html" class="footer-admin">Режим администратора</a>
+    </div>
+  </footer>
+  <div id="toast" class="toast"></div>
+  <script src="main.js"></script>
+  
+</body>
+</html>

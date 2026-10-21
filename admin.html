@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Админ — HanDiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-page">
+  <div class="admin-shell">
+    <div class="login-card" id="loginBox">
+      <h2>Админ HanDiz</h2>
+      <p>Управление заявками (localStorage).</p>
+      <div class="flash err" id="loginError" style="display:none"></div>
+      <form class="login-form" id="loginForm">
+        <label>Логин<input type="text" id="login" value="admin" required></label>
+        <label>Пароль<input type="password" id="password" value="admin123" required></label>
+        <button class="btn btn-accent btn-full" type="submit" style="margin-top:8px">Войти</button>
+      </form>
+      <p style="margin-top:16px;font-size:0.8rem;color:var(--ink-muted)">admin / admin123</p>
+      <p style="margin-top:10px"><a href="index.html">← На сайт</a></p>
+    </div>
+    <div id="panel" style="display:none">
+      <div class="admin-topbar">
+        <div><h1>Панель</h1><p style="color:var(--ink-muted)">А. Хан</p></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a href="index.html" class="btn btn-outline btn-sm">На сайт</a>
+          <button class="btn btn-sm" type="button" id="logoutBtn">Выйти</button>
+        </div>
+      </div>
+      <section class="section-card">
+        <h2>Заявки</h2>
+        <div id="requestsList" class="admin-empty">Пока нет заявок.</div>
+        <button class="btn btn-sm btn-outline" type="button" id="clearRequests" style="margin-top:12px">Очистить</button>
+      </section>
+    </div>
+  </div>
+  <script>
+    const KEY='handiz_auth', REQ='handiz_requests';
+    const loginBox=document.getElementById('loginBox'), panel=document.getElementById('panel'), err=document.getElementById('loginError');
+    function showPanel(on){loginBox.style.display=on?'none':'block';panel.style.display=on?'block':'none';if(on)render();}
+    if(sessionStorage.getItem(KEY)==='1')showPanel(true);
+    document.getElementById('loginForm').onsubmit=e=>{
+      e.preventDefault();
+      if(document.getElementById('login').value.trim()==='admin'&&document.getElementById('password').value==='admin123'){
+        sessionStorage.setItem(KEY,'1');err.style.display='none';showPanel(true);
+      }else{err.textContent='Неверный логин или пароль';err.style.display='block';}
+    };
+    document.getElementById('logoutBtn').onclick=()=>{sessionStorage.removeItem(KEY);showPanel(false);};
+    document.getElementById('clearRequests').onclick=()=>{localStorage.removeItem(REQ);render();};
+    function render(){
+      const box=document.getElementById('requestsList');
+      let list=[];try{list=JSON.parse(localStorage.getItem(REQ)||'[]');}catch(_){}
+      if(!list.length){box.className='admin-empty';box.textContent='Пока нет заявок.';return;}
+      box.className='';
+      box.innerHTML='<div style="overflow-x:auto"><table class="admin-table"><thead><tr><th>Дата</th><th>Имя</th><th>Email</th><th>Тема</th><th>Сообщение</th></tr></thead><tbody>'+
+        list.map(r=>`<tr><td>${esc(r.date)}</td><td>${esc(r.name)}</td><td>${esc(r.email)}</td><td>${esc(r.topic)}</td><td>${esc(r.message)}</td></tr>`).join('')+'</tbody></table></div>';
+    }
+    function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+  </script>
+</body>
+</html>
